@@ -6,22 +6,27 @@
     <title>Document</title>
     <script>
         window.onload = function(){
-            var count =0;
-            var image =document.getElementById('image');
-            var frames =[
+            var count = 0;
+            var image = document.getElementById('image');
+            var frames = [
                 '01.png', '02.png', '03.png', '04.png', '05.png', '06.png'
             ];
-            //타이머를 반복을 시작합니다
-
-            setInterval(function(){
-                image.src =frames[count % frames.length];
-                count = count +1;
-            }, 1000/20)
+            //타이머를 반복해서 시작합니다
+        //     setInterval(function(){
+        //         image.src ="img/" + frames[count % frames.length];
+        //         count = count + 1;
+        //     }, 1000 / 20);
+        //  }
+            setInterval(function() {
+                image.src = "img/" + frames[count++ % frames.length];
+            }, 1000/frames.length);
         }
+
+
     </script>
 </head>
 <body>
     <img id="image">
-    
 </body>
 </html>
+
